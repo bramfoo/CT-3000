@@ -8,7 +8,9 @@
     "clean": "rm -rf dist/*",
     "release": "npm run clean && npm run build",
     "deploy": "npm run release && firebase deploy",
-    "deployToCT3000": "gsutil -m rsync -d -r dist gs://www.ct3000.nl"
+    "deployToCT3000": "gsutil -m rsync -d -r dist gs://www.ct3000.nl",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -58,6 +60,7 @@
     "style-loader": "^0.13.0",
     "svg-inline-loader": "^0.7.1",
     "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "@kadira/storybook": "^2.21.0"
   }
 }
