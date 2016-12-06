@@ -1,17 +1,26 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
-import Button from './Button';
-import Welcome from './Welcome';
+import StatusBarComponent from '../src/components/editor/statusBar';
+import TranslationStore from '../src/stores/translation';
 
-storiesOf('Welcome', module)
-  .add('to Storybook', () => (
-    <Welcome showApp={linkTo('Button')}/>
-  ));
+import '../src/assets/style/main.less';
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')}>Hello Button</Button>
-  ))
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
-  ));
+storiesOf('StatusBar', module)
+  .add('Nederlands', () => {
+    TranslationStore.setLanguage('nl');
+    return(
+      <StatusBarComponent />
+    )
+  })
+  .add('Engels', () => {
+    TranslationStore.setLanguage('en');
+    return(
+      <StatusBarComponent />
+    )
+  })
+  .add('Duits', () => {
+    TranslationStore.setLanguage('de');
+    return(
+      <StatusBarComponent />
+    )
+  });
