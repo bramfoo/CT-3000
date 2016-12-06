@@ -47,12 +47,16 @@ module.exports = {
         loader: 'style!css!postcss!less'
       },
       {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
         test: /\.(png|jpg|jpeg|gif|woff)$/,
         loader: 'file?name=img/img-[hash:6].[ext]'
       }
     ],
   },
   postcss: function () {
-      return [autoprefixer];
+    return [autoprefixer];
   }
 };
